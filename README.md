@@ -31,4 +31,16 @@ where V_AREA = '제1투표장' </b> <br>
 투표검수조회페이지와 sql문입니다. 이 페이지에서는 제1투표장을에서 투표한 사람이 화면에 나오는 페이지로, 주민등록번호를 나누어 생년월일을 뒤에 붙여 만 나이를 구해주고 주민등록번호 숫자를 통한 성별을 알수있고, 후보들의 번호를 가져와 값을 출력해줍니다. 이전 라디오버튼에서  Y 와 N 을 나눠서 유권자확인 검사를 구별해줍니다. 
 # 후보자등수
 ![image](https://user-images.githubusercontent.com/102115231/210287377-430318a9-0603-4cf4-8881-7dd25e864f40.png) <br>
-이전에 값과 입력한 값이 같이 포함되서 현재까지에 후보들의 투표 수를 보여니다.
+이전에 값과 입력한 값이 같이 포함되서 현재까지에 후보들의 투표 수를 보여니다. <br>
+<br>
+<b>StringBuffer sb = new StringBuffer();
+    sb.append("select  v_no, m_name, count(*) cnt				   ")
+    	.append("from TBL_VOTE_202005 vote, TBL_MEMBER_202005 mem  ")
+    	.append("where vote.v_no=mem.m_no and vote.V_CONFIRM = 'Y' ")
+    	.append("group by v_no, m_name                             ")
+    	.append("order by cnt desc                                 ");
+    
+    String sql = sb.toString(); </b>
+    <br>
+    <br>
+    sql문은 유권자 확인이 Y인 사람들의 투표 수를 카운트하는 테이블입니다.
