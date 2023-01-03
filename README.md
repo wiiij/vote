@@ -40,7 +40,7 @@ where V_AREA = '제1투표장' </b> <br>
     	.append("group by v_no, m_name                             ")
     	.append("order by cnt desc                                 ");
     
-    String sql = sb.toString(); </b>
-    <br>
-    <br>
+   String sql = sb.toString(); </b>
+   <br>
+   <br>
    sql문은 유권자 확인이 Y인 사람들의 투표 수를 카운트하는 테이블입니다.
